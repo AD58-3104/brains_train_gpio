@@ -12,11 +12,11 @@ led1 = GPIO.PWM(led_pin, 50) #50Hz
 led1.start(0)
 
 for loop in range(10):
-    for i in range(0,60,20):
+    for i in range(0,30,20):
         led1.ChangeDutyCycle(i)
         time.sleep(0.05)
 
-    for i in range(60,0,-20):
+    for i in range(30,0,-20):
         led1.ChangeDutyCycle(i)
         time.sleep(0.05)
         
