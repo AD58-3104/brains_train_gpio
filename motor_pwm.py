@@ -1,33 +1,21 @@
-import sys
+#!/usr/bin/python
+import RPi.GPIO as GPIO
 import time
-from wiringpi import *
 
-PWM_PIN = [18,13]
+GPIO.setmode(GPIO.BCM)
 
-def setupMotor(id):
-    wiringPiSetupGpio()
-    pinMode(id,GPIO.PWM_OUTPUT)
-    pwmSetMode(GPIO.PWM_MODE_MS)
-    pwmSetRange(1920)
-    pwmSetClock(200)
+motor_pin = #指定
+GPIO.setup(motor_pin, GPIO.OUT)
 
-if __name__ == '__main__':
+servo = GPIO.PWM(motor_pin, 50)
+servo.start(0)
 
-    try:
-        id = PWM_PIN[int(sys.argv[2])]
-        angle = (sys.argv[2])
+for i in range(3):
+    servo.ChangeDutyCycle(5)
+    time.sleep(1)
 
-        if angle == 0:
-            setupMotor(id)
-            pwmWrite(id,0)
-        
-        elif angle < 44 or angle > 232:
-            print("ERROR: over range")
-        else:
-            setupMotor(id)
-            pwmWrite(id,angle)
-            time.sleep(0.5)
-            pwmWrite(id,0)
+    servo.ChangeDutyCycle(30)
+    time.sleep(1)
 
-    except:
-        print("Usage:argv[0] PWM_ID Count")
+servo.stop()
+GPIO.cleanup()
