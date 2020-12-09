@@ -4,7 +4,7 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-motor_pin = #指定
+motor_pin = 23#指定
 GPIO.setup(motor_pin, GPIO.OUT)
 
 servo = GPIO.PWM(motor_pin, 50)
