@@ -22,3 +22,4 @@ for loop in range(10):
         GPIO.output(led_pin_digital,GPIO.HIGH)
         #何か追加して交互に光らせるようにする
         time.sleep(0.2)
+GPIO.cleanup()
