@@ -23,10 +23,12 @@ GPIO.setup(sensor_right, GPIO.IN)
 
 
 while True:
+    print("---------------------")
     if GPIO.input(sensor_right) == GPIO.HIGH:
         print("right is HIGH")
     elif GPIO.input(sensor_right) == GPIO.LOW:
         print("right is LOW")
+    print("--------------------")
     if GPIO.input(sensor_left) == GPIO.HIGH:
         print("left is HIGH")
     elif GPIO.input(sensor_left) == GPIO.LOW:
