@@ -23,10 +23,10 @@ servo_right.start(0)
 
 
 while True:
-    if GPIO.input(sensor_right) == True:
-        print("right is true")
-    else if GPIO.input(sensor_left) == True:
-        print("left is true")
+    if GPIO.input(sensor_right) == GPIO.HIGH:
+        print("right is HIGH")
+    else if GPIO.input(sensor_left) == GPIO.HIGH:
+        print("left is HIGH")
 
 servo_right.stop()
 servo_left.stop()
