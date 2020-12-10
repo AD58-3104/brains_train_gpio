@@ -15,14 +15,14 @@ def switch_callback(gpio_pin):
 
 
 
-GPIO.add_event_detect(sensor_left, GPIO.FALLING,bouncetime=100)
-GPIO.add_event_detect(sensor_right, GPIO.FALLING,bouncetime=100)
+GPIO.add_event_detect(sensor_left, GPIO.FALLING,bouncetime=50)
+GPIO.add_event_detect(sensor_right, GPIO.FALLING,bouncetime=50)
 
 GPIO.add_event_callback(sensor_left, switch_callback)     
 GPIO.add_event_callback(sensor_right, switch_callback)   
 
 try:
     while True:
-        time.sleep(0.1)
+        time.sleep(0.05)
 except KeyboardInterrupt:
     GPIO.cleanup()
