@@ -31,7 +31,7 @@ while True:
         print("left is HIGH")
     elif GPIO.input(sensor_left) == GPIO.LOW:
         print("left is LOW")
-    sleep(1)
+    time.sleep(1)
 
 servo_right.stop()
 servo_left.stop()
