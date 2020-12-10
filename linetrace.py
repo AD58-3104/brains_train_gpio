@@ -4,21 +4,21 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-sensor_right = 7
-sensor_left = 6
+sensor_right = 22
+sensor_left = 9
 motor_right = 13
 motor_left = 14
-GPIO.setup(motor_right, GPIO.OUT)
-GPIO.setup(motor_left, GPIO.OUT)
+#GPIO.setup(motor_right, GPIO.OUT)
+#GPIO.setup(motor_left, GPIO.OUT)
 GPIO.setup(sensor_left, GPIO.IN)
 GPIO.setup(sensor_right, GPIO.IN)
 
 
-servo_left = GPIO.PWM(motor_left, 50)
-servo_right = GPIO.PWM(motor_right, 50)
+#servo_left = GPIO.PWM(motor_left, 50)
+#servo_right = GPIO.PWM(motor_right, 50)
 
-servo_left.start(0)
-servo_right.start(0)
+#servo_left.start(0)
+#servo_right.start(0)
 
 
 
@@ -33,6 +33,6 @@ while True:
         print("left is LOW")
     time.sleep(1)
 
-servo_right.stop()
-servo_left.stop()
+#servo_right.stop()
+#servo_left.stop()
 GPIO.cleanup()
